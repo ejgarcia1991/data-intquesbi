@@ -18,8 +18,50 @@ public class Alumno {
 public class Profesor {
     private String nombre:    
 }
+
 ```
 Mejora esta solución adoptada
+
+```Java
+public class Alumno {
+    private String nombre:
+    private int[] cursos;
+}
+
+public class Instituto{
+    private String[] profesores
+    private Alumno[] alumnos
+}
+
+//podríamos usar listas si queremos funcionalidad más avanzada también.
+
+```
+
+Otra variante, dependiendo de como queramos ver el problema:
+
+```Java
+public class Instituto{
+    private String[] profesores
+    private Alumno[] alumnos
+}
+
+public class Curso{
+    private String[] profesores_responsables
+    private string Nombre
+    private int id
+}
+
+public class Alumno {
+    private String nombre:
+    private Curso[] cursos;
+}
+
+
+
+//podríamos usar listas si queremos funcionalidad más avanzada también.
+
+```
+
 
 **2) POO**. Ten en cuenta el siguiente código escrito en Java
 
@@ -54,5 +96,58 @@ public class Jugador {
 ```
 
 Crea un nuevo diseño de clases si es preciso para resolver unos de los principios SOLID que se está violando
+
+```Java
+
+abstract class Arma{
+  abstract void action();
+}
+
+public class Cuchillo extends Arma{
+
+  public void action(){
+  System.out.println("Ataca con el cuchillo");
+  }
+
+}
+
+public class Revolver extends Arma{
+
+  public void action(){
+  System.out.println("Ataca con el revolver");
+  }
+
+}
+
+public class Plasma extends Arma{
+
+  public void action(){
+  System.out.println("Ataca con plasma");
+  }
+
+}
+
+
+
+public class Jugador {
+  private Arma arma;
+  private String nombre;
+
+  public Jugador(String nombre, Arma arma) {
+    this.nombre = nombre;
+    this.arma = arma;
+  }
+
+  public void setArma(Arma arma) {
+    this.arma = arma;
+  }
+
+
+  public void action() {
+  arma.action()
+  }
+  
+}
+```
 
 <br/>
